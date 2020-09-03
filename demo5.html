@@ -119,6 +119,43 @@
             　　this.raycaster.setFromCamera(this.mouse, this.camera);
                 var intersects = this.raycaster.intersectObjects(this.objects);
                 console.log(intersects)
+
+                if (intersects.length > 0) {
+                    // action.play();
+                } else {
+                    document.getElementById("model").classList.add("hidden");
+                    document.getElementById("model").innerHTML = "";
+                    document.getElementById("model").style.height = "30%";
+                    return false;
+                }
+                if(intersects[0].object.name=="Box003"){
+                    document.getElementById("model").classList.remove("hidden");
+                    document.getElementById("model").innerHTML = "<strong>烟用包装膜:</strong>烟用包装膜_烟用包装膜指以聚内烯树脂为主要原料，采用共挤平拉法或管膜法经双向拉伸制得的可热封型双向拉伸聚丙烯薄膜。用于卷烟软盒或硬盒、软条或硬条的外层包装，具有一定防潮、保香、美观等功能。根据原料和生产工艺不同，分为普通BOPP膜、微收缩BOPP膜、收缩BOPP膜等。<br><br><strong>盒包装纸:</strong>盒包装纸指将一定数量的卷烟包装成盒（硬盒或软盒）的专用纸，或用于包装烟支的纸基装潢印刷品。"
+                    document.getElementById("model").style.height = "30%";
+                    document.getElementById("model").style.fontSize = "30px";
+                    return false;
+                }
+                if(intersects[0].object.name=="Line003"){
+                    document.getElementById("model").style.height = "30%";
+                    document.getElementById("model").classList.remove("hidden");
+                    document.getElementById("model").innerHTML = "<strong>烟用框架纸:</strong>烟用框架纸指用于支撑和定位卷烟硬盒框架的卡纸。框架纸又称卡头纸、内衬卡纸、舌头卡纸和内舌卡纸。根据框架纸的原料和生产工艺不同，分为白卡框架纸、印刷框架纸、复合框架纸、真空喷铝（直镀）框架纸、真空喷铝（转移）框架纸等。";
+                    document.getElementById("model").style.fontSize = "30px";
+                    return false;
+                }
+                if(intersects[0].object.name=="Box02"){
+                    document.getElementById("model").style.height = "30%";
+                    document.getElementById("model").classList.remove("hidden");
+                    document.getElementById("model").innerHTML = "<strong>烟用内村纸:</strong>烟用内衬纸指衬于卷烟软盒或硬盒内层的纸，对卷烟起一定防潮、防湿作用，防止卷烟霉变和香气损失。根据内衬纸的原料和生产工艺不同，分为无铝内衬纸、真空喷铝（直镀）内衬纸、真空喷铝（转移）内衬纸、复合铝箔内衬纸、复合转移内衬纸等。";
+                    document.getElementById("model").style.fontSize = "30px";
+                    return false;
+                }
+                if(intersects[0].object.name.indexOf("Circle")!=-1){
+                    document.getElementById("model").style.height = "30%";
+                    document.getElementById("model").classList.remove("hidden");
+                    document.getElementById("model").innerHTML = "<strong>卷烟纸:</strong>卷烟纸指用于包裹烟丝成为卷烟烟支的专用纸。根据卷烟纸的原料和生产工艺不同，分为木浆、麻浆、混合浆、无罗纹、有罗纹（包括横罗纹、竖罗纹、斜罗纹、格罗纹等）卷烟纸。<br><br><strong>烟用滤棒:</strong>烟用滤棒指以烟用丝束、滤棒成形纸等为主要原料，通过加工、卷制、分切等工艺制成对卷烟烟气具有过滤作用的圆柱形棒，用于加工滤嘴卷烟。主要有普通滤棒和特种滤棒。"
+                    document.getElementById("model").style.fontSize = "30px";
+                    return false;
+                }
             }, false)
             //手机
             document.addEventListener("touchstart", (event) => {
